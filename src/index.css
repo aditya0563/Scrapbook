@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Indie+Flower&family=Special+Elite&family=Caveat:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+@theme {
+  --font-cursive: "Dancing Script", cursive;
+  --font-hand: "Indie Flower", serif;
+  --font-mono: "Special Elite", monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-caveat: "Caveat", cursive;
+
+  --color-paper: #f9f7f2;
+  --color-album-red: #d9534f;
+  --color-tape-green: #a8bba8;
+}
+
+body {
+  @apply bg-[#e8e4db] text-[#333] font-sans overflow-x-hidden;
+}
+
+.scrapbook-page {
+  @apply bg-paper relative shadow-xl mx-auto my-8 max-w-2xl min-h-[800px] p-12 transition-transform duration-500 ease-in-out;
+  background-image: 
+    radial-gradient(#d1d1d1 0.5px, transparent 0.5px),
+    radial-gradient(#d1d1d1 0.5px, #f9f7f2 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.scrapbook-page::before {
+  content: "";
+  @apply absolute inset-0 opacity-[0.03] pointer-events-none;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+.polaroid {
+  @apply bg-white p-4 pb-12 shadow-md relative inline-block;
+}
+
+.polaroid img {
+  @apply w-full object-cover aspect-square;
+}
+
+.polaroid-caption {
+  @apply font-cursive text-lg mt-4 text-center text-[#444];
+}
+
+.washi-tape-top {
+  @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-8 bg-tape-green/60 rotate-1 z-10 opacity-80;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.washi-tape-corner {
+  @apply absolute top-4 right-4 w-16 h-8 bg-tape-green/50 rotate-45 z-10 opacity-70;
+}
+
+.scrapbook-title {
+  @apply font-cursive text-6xl text-album-red mb-4;
+}
+
+.scrapbook-subtitle {
+  @apply font-mono text-xs uppercase tracking-widest opacity-60;
+}
+
+.scrapbook-section-title {
+  @apply font-cursive text-4xl text-album-red mb-6;
+}
+
+.scrapbook-text {
+  @apply font-mono text-sm leading-relaxed mb-8;
+}
+
+/* Custom scrollbar for better aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e8e4db;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4beb3;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0a99c;
+}
