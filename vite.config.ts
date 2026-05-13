@@ -7,7 +7,7 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     // ADD THIS LINE BELOW
-    base: '/Scrapbook/',
+    base: '/scrapbook/',
     
     plugins: [react(), tailwindcss()],
     define: {
